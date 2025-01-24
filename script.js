@@ -51,25 +51,44 @@ function afficherPointeSapin(n) {
   }
 }
 
-//   afficherPointeSapin(3)
+ afficherPointeSapin(3)
 
-//function afficherEtages
+// function afficherSapin(etages, hauteur_etage) {
+//   afficherPointeSapin(hauteur_etage);
+//   for (let j = 1; j < etages; j++) {
+//     // boucle pour itérer l'opération le nombre de fois voulu
+//     for (let i = 1; i <= etages; i++) {
+//       // boucle pour faire les étages en omettant la premiere ligne
+//       console.log(
+//         " ".repeat(etages - i) +
+//           "/" +
+//           "*".repeat(i) +
+//           "|" +
+//           "*".repeat(i) +
+//           "\\"
+//       )
+//     }
+//   }
+// }
+// afficherSapin(3, 3);
 
-function afficherSapin(etages, hauteur_etage) {
-  afficherPointeSapin(hauteur_etage);
-  for (let j = 1; j < etages; j++) {
-    // boucle pour itérer l'opération le nombre de fois voulu
-    for (let i = 1; i <= etages; i++) {
-      // boucle pour faire les étages en omettant la premiere ligne
-      console.log(
-        " ".repeat(etages - i) +
-          "/" +
-          "*".repeat(i) +
-          "|" +
-          "*".repeat(i) +
-          "\\"
-      )
-    }
-  }
+function afficherEtage(hauteur, pointe_offset) {
+    // comment sauter les premières lignes d'étoiles pour ne commencer qu'à la ligne numero 'pointe_offset' ?
+    const offset = hauteur+pointe_offset
+    
+    for (let i = pointe_offset; i <= offset; i++) {
+        
+        // boucle pour faire les étages en omettant la premiere ligne
+        console.log(
+          " ".repeat(offset-i) +
+            "/" +
+            "*".repeat(i) +
+            "|" +
+            "*".repeat(i) +
+            "\\"
+        )
 }
-afficherSapin(3, 3);
+}
+ afficherEtage(3, 0) // les 3 premières lignes
+ afficherEtage(3, 1) // affiche à partir de la deuxième ligne, et continue sur 3 lignes
+ afficherEtage(3, 2) // affiche à partie de la troisième lige, et continue sur 3 lignes
